@@ -1,0 +1,20 @@
+{
+  "name": "ai-workspace-manager",
+  "version": "0.1.0",
+  "description": "Multi-repo git worktree workspace manager with a local web UI",
+  "main": "server.js",
+  "bin": {
+    "ai-workspace-manager": "./bin/ai-workspace-manager.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "git",
+    "worktree",
+    "workspace",
+    "multi-repo"
+  ],
+  "license": "MIT"
+}

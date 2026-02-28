@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Workspace Manager</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Multi-Repo Workspace Manager</h1>
+      <p class="hint">管理多个仓库配置，并通过界面一键创建/清理 git worktree 工作空间。</p>
+
+      <section class="card">
+        <h2>Workspace 配置</h2>
+        <div class="row">
+          <label>已保存配置</label>
+          <select id="workspaceSelect"></select>
+          <button id="newWorkspaceBtn" type="button">新建配置</button>
+        </div>
+
+        <div class="grid">
+          <label for="workspaceId">ID</label>
+          <input id="workspaceId" placeholder="auth-stack" />
+
+          <label for="workspaceName">名称</label>
+          <input id="workspaceName" placeholder="Auth Stack" />
+
+          <label for="baseRoot">Base Repo 根目录</label>
+          <input id="baseRoot" placeholder="~/git-base" />
+
+          <label for="workspaceRoot">Workspace 根目录</label>
+          <input id="workspaceRoot" placeholder="~/workspace" />
+        </div>
+
+        <label for="repos">Repos 配置（JSON 数组）</label>
+        <textarea id="repos" rows="8" spellcheck="false"></textarea>
+
+        <div class="row end">
+          <button id="saveConfigBtn" type="button">保存配置</button>
+          <button id="deleteConfigBtn" type="button" class="danger">删除配置</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Worktree 操作</h2>
+        <div class="row">
+          <label for="featureBranch">Feature 分支</label>
+          <input id="featureBranch" placeholder="feat/auth-v2" />
+        </div>
+        <div class="row end">
+          <button id="createBtn" type="button">创建 Workspace</button>
+          <button id="cleanupBtn" type="button" class="danger">清理 Workspace</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>日志</h2>
+        <pre id="log"></pre>
+      </section>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
